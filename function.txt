@@ -1,0 +1,181 @@
+//..................pyramid pattern(numbers)...........................
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the number";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n-i;j++){
+            cout<<" ";
+        }
+        for(int k=1;k<=i;k++){
+            cout<<k;
+        }
+        for(int m=i-1;m>=1;m--){
+            cout<<m;
+        }
+        cout<<"\n";
+    }
+}
+//..................pyramid pattern(symbol)...........................
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the number";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n-i;j++){
+            cout<<" ";
+        }
+        for(int k=1;k<=i;k++){
+            cout<<"*";
+        }
+        for(int m=i-1;m>=1;m--){
+            cout<<"*";
+        }
+        cout<<"\n";
+    }
+}
+//..................hollow diamond pattern...........................
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n=7;   // only n=7 value is perfactly work 
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(i+j==n-2 ||i+j==n+4||i-j==n-4||i-j==4-n)
+            cout<<"*";
+            else
+            cout<<" ";
+        }
+        cout<<"\n";
+    }
+}
+
+//..................butterfly pattern...........................
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n=4;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(i>=j)
+            cout<<"*";
+            else
+            cout<<" ";
+        }
+        for(int k=1;k<=n;k++){
+            if(i+k>=n+1)
+            cout<<"*";
+            else
+            cout<<" ";
+        }
+        cout<<"\n";
+    }
+     for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(i+j<=n+1)
+            cout<<"*";
+            else
+            cout<<" ";
+        }
+        for(int k=1;k<=n;k++){
+            if(k>=i)
+            cout<<"*";
+            else
+            cout<<" ";
+        }
+        cout<<"\n";
+    }
+}
+
+//.....................Function to calculate sum of digit................
+
+#include<iostream>
+using namespace std;
+int sum(int n){
+    int sum=0;
+    while(n!=0){
+        sum=sum+n%10;
+        n=n/10;
+    }
+    return sum;
+}
+int main(){
+    int n;
+    cout<<"enter the number";
+    cin>>n;
+    cout<<"the sum digits is :- "<<sum(n);
+}
+
+//.....................Function to calculate nCr cofficient................
+
+#include<iostream>
+using namespace std;
+int fact(int n){
+    int fact=1;
+    for(int i=1;i<=n;i++)
+    fact=fact*i;
+    return fact;
+}
+int main(){
+    int n,r,n_fact,r_fact,nMr_fact;
+    cout<<"enter the value of N ";
+    cin>>n;
+    cout<<"enter the value of R ";
+    cin>>r;
+    n_fact=fact(n);
+    r_fact=fact(r);
+    nMr_fact=fact(n-r);
+    cout<<"the nCr cofficient of n and r is :-> "<<n_fact/(r_fact*nMr_fact);
+}
+
+//.....................Function to check prime or not................
+
+#include<iostream>
+using namespace std;
+void isPrime(int n){
+    int c=0;
+    for(int i=2;i<n;i++){
+        if(n%i==0)
+        c++;
+    }
+    if(c)
+    cout<<n<<" is not a prime number";
+    else
+    cout<<n<<" is a prime number";
+
+}
+int main(){
+    int n;
+    cout<<"enter the number";
+    cin>>n;
+   isPrime(n);
+}
+
+//.....................Function to calculate sum of digit................
+
+#include<iostream>
+using namespace std;
+int rev(int n){
+    int rev=0;
+    while(n!=0){
+        rev=rev*10+n%10;
+        n=n/10;
+    }
+    return rev;
+}
+int main(){
+    int n;
+    cout<<"enter the number";
+    cin>>n;
+    cout<<"the reversed number is  :- "<<rev(n);
+}
+
+
+
